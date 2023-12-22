@@ -1,32 +1,36 @@
 <%= form_with(model: master) do |form| %>
-  <% if master.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(master.errors.count, "error") %> prohibited this master from being saved:</h2>
+<% if master.errors.any? %>
+<div style="color: red">
+  <h2><%= pluralize(master.errors.count, "error") %> prohibited this master from being saved:</h2>
 
-      <ul>
-        <% master.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% master.errors.each do |error| %>
+    <li><%= error.full_message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="mb-3">
-    <%= form.label :name, style: "display: block", class: "form-label" %>
-    <%= form.text_field :name, class: "form-control" %>  
-  </div>
 
-  <div class="mb-3">
-    <%= form.label :surname, style: "display: block", class: "form-label" %>
-    <%= form.text_field :surname, class: "form-control" %>
-  </div>
+<%= tag.h1 form_title %>
+<div class="mb-3">
+  <%= form.label :name, style: "display: block", class: "form-label" %>
+  <%= form.text_field :name, class: "form-control" %>  
+</div>
 
-  <div class="mb-3">
-    <%= form.label :about_me, style: "display: block", class: "form-label" %>
-    <%= form.text_area :about_me, class: "form-control" %>
-  </div>
+<div class="mb-3">
+  <%= form.label :surname, style: "display: block", class: "form-label" %>
+  <%= form.text_field :surname, class: "form-control" %>
+</div>
 
-  <div>
-    <%= form.submit class: "btn btn-primary" %>
-  </div>
+<div class="mb-3">
+  <%= form.label :about_me, style: "display: block", class: "form-label" %>
+  <%= form.text_area :about_me, class: "form-control" %>
+</div>
+
+<div>
+  <%= form.submit "Create new master", class: "btn btn-primary" %>
+  <%= link_to "Back to masters", masters_path, class: "mx-4" %>
+</div>
+
 <% end %>
