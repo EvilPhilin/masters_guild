@@ -1,33 +1,16 @@
 <div id="<%= dom_id master %>">
-  <p>
-    <strong>Name:</strong>
-    <%= master.name %>
-  </p>
-
-  <p>
-    <strong>Surname:</strong>
-    <%= master.surname %>
-  </p>
-
-  <p>
-    <strong>About me:</strong>
-    <%= master.about_me %>
-  </p>
-
-</div>
-
-<%# Future card for master
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-    <div class="col-md-4">
-      <img src="..." class="img-fluid rounded-start" alt="...">
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+  <div class="card mb-3" style="max-width: 720px;">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img src="..." class="img-fluid rounded-start" alt="...">
+      </div>
+      <div class="col-md-8">
+        <div class="card-body">
+          <h5 class="card-title"><%= "#{master.name} #{master.surname}" %></h5>
+          <p class="card-text"><%= master.about_me %></p>
+          <%# <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p> %>
+        </div>
       </div>
     </div>
   </div>
-</div> %>
+</div>
