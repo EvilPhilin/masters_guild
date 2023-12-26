@@ -1,10 +1,10 @@
 class CreateUsers < ActiveRecord::Migration[7.1]
   def change
     create_table :users do |t|
-      t.string :email
-      t.string :password
-      t.string :username
-      t.references :master, null: false, foreign_key: true
+      t.string :email, null: false
+      t.string :password, null: false
+      t.string :username, null: false
+      t.references :master, null: true, foreign_key: true, default: nil
 
       t.timestamps
     end
