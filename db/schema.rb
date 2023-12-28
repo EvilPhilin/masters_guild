@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_26_081955) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_28_082817) do
   create_table "masters", force: :cascade do |t|
     t.string "name", null: false
     t.string "surname", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_26_081955) do
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
-    t.string "password", null: false
+    t.string "password_digest", null: false
     t.string "username", null: false
     t.integer "master_id"
     t.datetime "created_at", null: false
