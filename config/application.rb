@@ -23,5 +23,9 @@ module Guild
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+    config.generators do |g|
+      g.view_specs false
+      g.helper_specs false
+    end
   end
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
+  root "main_page#index"
+
   resources :users
   resources :masters
-  root "main_page#index"
+  resource :session, only: %i[new create destroy]
 end

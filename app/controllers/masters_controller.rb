@@ -58,12 +58,10 @@ class MastersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_master
       @master = Master.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def master_params
       params.require(:master).permit(:name, :surname, :about_me)
     end

@@ -26,7 +26,13 @@
       </ul>
 
       <div>
-        <%= link_to "Sign up", new_user_path %>
+        <% if current_user.present? %>
+          <h2 class="mx-5"><%= "#{current_user.username}" %></h2>
+          <%= button_to "Log out", session_path, method: :delete, class: "btn btn-link" %>
+        <% else %>
+          <%= link_to "Sign up", new_user_path, class: "btn btn-success" %>
+          <%= link_to "Sign in", new_session_path, class: "btn btn-link" %>
+        <% end %>
       </div>
     </div>
   </div>
