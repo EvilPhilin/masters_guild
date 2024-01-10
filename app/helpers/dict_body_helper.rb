@@ -1,0 +1,2 @@
+module DictBodyHelper
+end
