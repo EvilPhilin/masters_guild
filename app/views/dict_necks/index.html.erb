@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dict necks</h1>
+
+<div id="dict_necks">
+  <% @dict_necks.each do |dict_neck| %>
+    <%= render dict_neck %>
+    <p>
+      <%= link_to "Show this dict neck", dict_neck %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dict neck", new_dict_neck_path %>

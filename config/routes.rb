@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users
   resources :masters
-  resources :dict_bodies, except: %i[destroy]
   resource :session, only: %i[new create destroy]
+
+  resources :dict_necks, except: %i[destroy]
+  resources :dict_bodies, except: %i[destroy]
 end

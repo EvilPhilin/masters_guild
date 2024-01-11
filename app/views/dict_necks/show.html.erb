@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dict_neck %>
+
+<div>
+  <%= link_to "Edit this dict neck", edit_dict_neck_path(@dict_neck) %> |
+  <%= link_to "Back to dict necks", dict_necks_path %>
+
+  <%= button_to "Destroy this dict neck", @dict_neck, method: :delete %>
+</div>

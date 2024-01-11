@@ -1,0 +1,2 @@
+class DictNeck < ApplicationRecord
+end
