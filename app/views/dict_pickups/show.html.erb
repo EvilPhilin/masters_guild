@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @dict_pickup %>
+
+<div>
+  <%= link_to "Edit this dict pickup", edit_dict_pickup_path(@dict_pickup) %> |
+  <%= link_to "Back to dict pickups", dict_pickups_path %>
+
+  <%= button_to "Destroy this dict pickup", @dict_pickup, method: :delete %>
+</div>

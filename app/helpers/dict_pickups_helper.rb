@@ -1,0 +1,2 @@
+module DictPickupsHelper
+end

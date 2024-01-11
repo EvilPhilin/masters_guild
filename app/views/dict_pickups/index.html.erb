@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Dict pickups</h1>
+
+<div id="dict_pickups">
+  <% @dict_pickups.each do |dict_pickup| %>
+    <%= render dict_pickup %>
+    <p>
+      <%= link_to "Show this dict pickup", dict_pickup %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New dict pickup", new_dict_pickup_path %>
