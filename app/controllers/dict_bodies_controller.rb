@@ -2,21 +2,21 @@ class DictBodiesController < ApplicationController
   before_action :set_body, only: %i[ show edit update ]
 
   def index
-    @bodies = DictBody.all
+    @dict_bodies = DictBody.all
   end
 
   def show
   end
 
   def new
-    @body = DictBody.new
+    @dict_body = DictBody.new
   end
 
   def create
-    @body = DictBody.new(body_params)
+    @dict_body = DictBody.new(dict_body_params)
 
-    if @body.save
-      redirect_to dict_body_url(@body), notice: "Body was successfully created."
+    if @dict_body.save
+      redirect_to dict_body_url(@dict_body), notice: "Body was successfully created."
     else 
       render :new, status: :unprocessable_entity
     end
@@ -26,8 +26,8 @@ class DictBodiesController < ApplicationController
   end
 
   def update
-    if @body.update(body_params)
-      redirect_to dict_body_url(@body), notice: "Body was successfully updated."
+    if @dict_body.update(dict_body_params)
+      redirect_to dict_body_url(@dict_body), notice: "Body was successfully updated."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -35,10 +35,10 @@ class DictBodiesController < ApplicationController
 
   private
     def set_body
-      @body = DictBody.find(params[:id])
+      @dict_body = DictBody.find(params[:id])
     end
 
-    def body_params
+    def dict_body_params
       params.require(:dict_body).permit(:name, :description, :price)
     end
 end

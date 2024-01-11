@@ -10,8 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_10_082917) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_11_075600) do
   create_table "dict_bodies", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "description"
+    t.decimal "price", precision: 10, scale: 2, default: "0.0", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "dict_necks", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
     t.decimal "price", precision: 10, scale: 2, default: "0.0", null: false

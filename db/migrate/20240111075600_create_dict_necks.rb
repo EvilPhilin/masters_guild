@@ -1,9 +1,9 @@
 class CreateDictNecks < ActiveRecord::Migration[7.1]
   def change
     create_table :dict_necks do |t|
-      t.string :name
+      t.string :name, null: false
       t.text :description
-      t.decimal :price
+      t.decimal :price, precision: 10, scale: 2, null: false, default: 0.0
 
       t.timestamps
     end

@@ -1,5 +1,5 @@
 class DictNecksController < ApplicationController
-  before_action :set_dict_neck, only: %i[ show edit update destroy ]
+  before_action :set_dict_neck, only: %i[ show edit update ]
 
   # GET /dict_necks or /dict_necks.json
   def index
