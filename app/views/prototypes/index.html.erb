@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Prototypes</h1>
+
+<div id="prototypes">
+  <% @prototypes.each do |prototype| %>
+    <%= render prototype %>
+    <p>
+      <%= link_to "Show this prototype", prototype %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New prototype", new_prototype_path %>

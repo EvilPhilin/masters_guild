@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @prototype %>
+
+<div>
+  <%= link_to "Edit this prototype", edit_prototype_path(@prototype) %> |
+  <%= link_to "Back to prototypes", prototypes_path %>
+
+  <%= button_to "Destroy this prototype", @prototype, method: :delete %>
+</div>

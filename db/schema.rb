@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_11_082257) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_15_075614) do
   create_table "dict_bodies", force: :cascade do |t|
     t.string "name", null: false
     t.text "description"
@@ -43,6 +43,19 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_082257) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "prototypes", force: :cascade do |t|
+    t.integer "dict_body_id", null: false
+    t.integer "dict_neck_id", null: false
+    t.integer "dict_pickup_id", null: false
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["dict_body_id"], name: "index_prototypes_on_dict_body_id"
+    t.index ["dict_neck_id"], name: "index_prototypes_on_dict_neck_id"
+    t.index ["dict_pickup_id"], name: "index_prototypes_on_dict_pickup_id"
+    t.index ["user_id"], name: "index_prototypes_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "password_digest", null: false
@@ -53,5 +66,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_11_082257) do
     t.index ["master_id"], name: "index_users_on_master_id"
   end
 
+  add_foreign_key "prototypes", "dict_bodies"
+  add_foreign_key "prototypes", "dict_necks"
+  add_foreign_key "prototypes", "dict_pickups"
+  add_foreign_key "prototypes", "users"
   add_foreign_key "users", "masters"
 end

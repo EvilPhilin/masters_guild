@@ -24,9 +24,9 @@ class DictNecksController < ApplicationController
     @dict_neck = DictNeck.new(dict_neck_params)
 
     if @dict_neck.save
-      format.html { redirect_to dict_neck_url(@dict_neck), notice: "Neck was successfully created." }
+      redirect_to dict_neck_url(@dict_neck), notice: "Neck was successfully created."
     else
-      format.html { render :new, status: :unprocessable_entity }
+      render :new, status: :unprocessable_entity
     end
   end
 
